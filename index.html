@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>A. Izzat Shafran Ashari — Portfolio</title>
+    <style>
+      :root {
+        --bg: #0b0c10;
+        --fg: rgba(255, 255, 255, 0.92);
+        --mut: rgba(255, 255, 255, 0.68);
+        --ln: rgba(255, 255, 255, 0.14);
+        --p: rgba(255, 255, 255, 0.06);
+        --p2: rgba(255, 255, 255, 0.1);
+        --r: 16px;
+      }
+      [data-theme="light"] {
+        --bg: #f7f7f8;
+        --fg: rgba(0, 0, 0, 0.88);
+        --mut: rgba(0, 0, 0, 0.62);
+        --ln: rgba(0, 0, 0, 0.14);
+        --p: rgba(0, 0, 0, 0.06);
+        --p2: rgba(0, 0, 0, 0.1);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+        background: var(--bg);
+        color: var(--fg);
+        line-height: 1.6;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      .bg {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.9;
+        filter: saturate(0);
+        background: radial-gradient(
+            800px 500px at 15% 20%,
+            rgba(255, 255, 255, 0.1),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 520px at 55% 85%,
+            rgba(255, 255, 255, 0.06),
+            transparent 60%
+          );
+      }
+      [data-theme="light"] .bg {
+        background: radial-gradient(
+            800px 500px at 15% 20%,
+            rgba(0, 0, 0, 0.08),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 520px at 55% 85%,
+            rgba(0, 0, 0, 0.05),
+            transparent 60%
+          );
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--ln);
+        background: color-mix(in oklab, var(--bg) 60%, transparent);
+      }
+      .n {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+      }
+      .brand {
+        font-weight: 900;
+      }
+      .m {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .btn,
+      .pill {
+        border: 1px solid var(--ln);
+        background: var(--p);
+        color: inherit;
+        border-radius: 999px;
+        padding: 9px 12px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .btn {
+        border-radius: 12px;
+      }
+      .pill:hover,
+      .btn:hover {
+        background: var(--p2);
+      }
+      .card {
+        background: var(--p);
+        border: 1px solid var(--ln);
+        border-radius: var(--r);
+        padding: 16px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 12px;
+      }
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: clamp(26px, 4vw, 44px);
+        line-height: 1.1;
+      }
+      h2 {
+        margin: 0;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        text-transform: uppercase;
+        opacity: 0.9;
+      }
+      p {
+        margin: 0 0 12px;
+        color: var(--mut);
+      }
+      .sec {
+        padding: 14px 0;
+      }
+      .head {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: end;
+      }
+      .hr {
+        height: 1px;
+        background: var(--ln);
+        margin: 10px 0 12px;
+      }
+      .row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .skills {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      @media (max-width: 900px) {
+        .skills {
+          grid-template-columns: 1fr;
+        }
+      }
+      .bar {
+        height: 10px;
+        border-radius: 999px;
+        border: 1px solid var(--ln);
+        overflow: hidden;
+        background: var(--p2);
+      }
+      .bar > span {
+        display: block;
+        height: 100%;
+        width: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.9),
+          rgba(255, 255, 255, 0.6)
+        );
+        filter: saturate(0);
+      }
+      [data-theme="light"] .bar > span {
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.9),
+          rgba(0, 0, 0, 0.55)
+        );
+      }
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      @media (max-width: 1000px) {
+        .projects {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 650px) {
+        .projects {
+          grid-template-columns: 1fr;
+        }
+      }
+      .proj h3 {
+        margin: 0 0 6px;
+        font-size: 15px;
+      }
+      .proj p {
+        margin: 0;
+        color: var(--mut);
+        font-size: 13px;
+      }
+      label {
+        font-size: 12px;
+        font-weight: 900;
+        color: var(--mut);
+        text-transform: uppercase;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 11px 12px;
+        border-radius: 12px;
+        border: 1px solid var(--ln);
+        background: var(--p);
+        color: var(--fg);
+        outline: none;
+        font-weight: 700;
+      }
+      textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+      footer {
+        padding: 22px 0 32px;
+        color: var(--mut);
+        font-size: 12px;
+      }
+      .toast {
+        position: fixed;
+        left: 50%;
+        bottom: 18px;
+        transform: translateX(-50%);
+        background: color-mix(in oklab, var(--p2) 85%, transparent);
+        border: 1px solid var(--ln);
+        padding: 10px 12px;
+        border-radius: 999px;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.2s;
+        font-weight: 900;
+        font-size: 13px;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-4px);
+      }
+      .small {
+        color: var(--mut);
+        font-size: 13px;
+      }
+    </style>
+  </head>
+
+  <body data-theme="dark">
+    <div class="bg"></div>
+
+    <nav>
+      <div class="wrap n">
+        <div class="brand">
+          A. Izzat Shafran Ashari
+          <span class="small">• Intern @ Ashari Tech Indonesia</span>
+        </div>
+        <div class="m">
+          <button class="pill" data-jump="#about">About</button>
+          <button class="pill" data-jump="#skills">Skills</button>
+          <button class="pill" data-jump="#projects">Projects</button>
+          <button class="pill" data-jump="#contact">Contact</button>
+          <button class="pill" id="themeBtn" title="Toggle theme">
+            Change Mode
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="wrap sec">
+      <div class="grid">
+        <div class="card">
+          <h1>Build clean. Ship fast.</h1>
+          <p>
+            Saya <b>A. Izzat Shafran Ashari</b> — intern di
+            <b>Ashari Tech Indonesia</b>. Saya fokus membangun web yang
+            <b>rapi</b>, <b>responsif</b>, dan <b>nyaman dipakai</b>. Saya suka
+            mengubah ide jadi produk yang bisa langsung dicoba.
+          </p>
+          <div class="row">
+            <button class="btn" data-jump="#projects">Lihat Project</button>
+            <button class="btn" id="copyEmailBtn" type="button">
+              Copy Email
+            </button>
+            <button class="btn" id="downloadCvBtn" type="button">
+              Download CV
+            </button>
+          </div>
+          <div class="small" style="margin-top: 10px">
+            Saat ini terbuka untuk kolaborasi kecil, perbaikan UI, atau tugas
+            front-end.
+          </div>
+        </div>
+
+        <div class="card">
+          <p style="margin: 0 0 10px"><b>Core focus</b></p>
+          <div class="row">
+            <span class="pill" style="cursor: default">Web UI</span>
+            <span class="pill" style="cursor: default">UI/UX</span>
+            <span class="pill" style="cursor: default">Front-end</span>
+            <span class="pill" style="cursor: default">Design System</span>
+            <span class="pill" style="cursor: default">Responsive</span>
+          </div>
+          <div class="hr"></div>
+          <div class="small">
+            Prinsip saya sederhana: <b>jelas</b>, <b>cepat</b>, dan
+            <b>konsisten</b>.
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="sec" id="about">
+        <div class="head"><h2>About</h2></div>
+        <div class="hr"></div>
+        <div class="card">
+          Saya menikmati proses membangun antarmuka yang “ringan tapi niat”.
+          Mulai dari layout, komponen, sampai detail kecil seperti spacing,
+          state tombol, dan aksesibilitas dasar. Target saya: hasil yang
+          terlihat profesional dan mudah dipelihara.
+        </div>
+      </section>
+
+      <section class="sec" id="skills">
+        <div class="head"><h2>Skills</h2></div>
+        <div class="hr"></div>
+        <div class="skills">
+          <div class="card">
+            <div class="row" style="justify-content: space-between">
+              <b>HTML/CSS</b><span class="small">Advanced</span>
+            </div>
+            <div class="bar"><span data-level="86"></span></div>
+          </div>
+          <div class="card">
+            <div class="row" style="justify-content: space-between">
+              <b>JavaScript</b><span class="small">Intermediate</span>
+            </div>
+            <div class="bar"><span data-level="74"></span></div>
+          </div>
+          <div class="card">
+            <div class="row" style="justify-content: space-between">
+              <b>UI/UX</b><span class="small">Intermediate</span>
+            </div>
+            <div class="bar"><span data-level="70"></span></div>
+          </div>
+          <div class="card">
+            <div class="row" style="justify-content: space-between">
+              <b>Git/GitHub</b><span class="small">Intermediate</span>
+            </div>
+            <div class="bar"><span data-level="72"></span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="projects">
+        <div class="head"><h2>Projects</h2></div>
+        <div class="hr"></div>
+        <div class="projects">
+          <article class="card proj">
+            <h3>Monochrome Landing</h3>
+            <p>Landing page modern, responsive, dan fokus pada keterbacaan.</p>
+            <div class="row" style="margin-top: 10px">
+              <a class="btn" href="#" onclick="return false;">Demo</a>
+              <a class="btn" href="#" onclick="return false;">Repo</a>
+            </div>
+          </article>
+          <article class="card proj">
+            <h3>Mini Dashboard</h3>
+            <p>
+              Dashboard ringkas untuk menampilkan data dengan UX yang jelas.
+            </p>
+            <div class="row" style="margin-top: 10px">
+              <a class="btn" href="#" onclick="return false;">Demo</a>
+              <a class="btn" href="#" onclick="return false;">Repo</a>
+            </div>
+          </article>
+          <article class="card proj">
+            <h3>Automation Helper</h3>
+            <p>
+              Tool kecil untuk mempercepat pekerjaan berulang
+              (format/cek/generate).
+            </p>
+            <div class="row" style="margin-top: 10px">
+              <a class="btn" href="#" onclick="return false;">Demo</a>
+              <a class="btn" href="#" onclick="return false;">Repo</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="sec" id="contact">
+        <div class="head"><h2>Contact</h2></div>
+        <div class="hr"></div>
+
+        <div class="grid">
+          <div class="card">
+            <div class="row" style="justify-content: space-between">
+              <div>
+                <b>Email</b>
+                <div id="emailText" class="small">ifran@ashari.tech</div>
+                <div class="hr"></div>
+                <b>WhatsApp</b>
+                <div id="phoneText" class="small">082271598281</div>
+              </div>
+              <div class="row" style="justify-content: flex-end">
+                <button class="btn" id="copyEmailBtn2" type="button">
+                  Copy Email
+                </button>
+                <button class="btn" id="copyPhoneBtn" type="button">
+                  Copy WA
+                </button>
+              </div>
+            </div>
+
+            <div class="hr"></div>
+            <div class="row">
+              <a
+                class="btn"
+                id="openLinkedIn"
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+                >LinkedIn</a
+              >
+              <a
+                class="btn"
+                id="openGitHub"
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+                >GitHub</a
+              >
+              <a
+                class="btn"
+                id="openWhatsApp"
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+                >WhatsApp</a
+              >
+            </div>
+
+            <div class="small" style="margin-top: 10px">
+              Biasanya saya balas dalam 1×24 jam (kalau tidak sedang
+              meeting/kelas).
+            </div>
+          </div>
+
+          <div class="card">
+            <form id="contactForm">
+              <div class="row">
+                <div style="flex: 1; min-width: 200px">
+                  <label>Nama</label
+                  ><input id="name" required placeholder="Nama kamu" />
+                </div>
+                <div style="flex: 1; min-width: 200px">
+                  <label>Email</label
+                  ><input
+                    id="email"
+                    required
+                    type="email"
+                    placeholder="email@domain.com"
+                  />
+                </div>
+              </div>
+              <div style="margin-top: 10px">
+                <label>Pesan</label
+                ><textarea
+                  id="msg"
+                  placeholder="Tulis pesan singkat (contoh: butuh landing page, revisi UI, dsb)…"
+                ></textarea>
+              </div>
+              <div class="row" style="margin-top: 10px">
+                <button class="btn" type="submit">Kirim via Email →</button>
+                <button class="btn" type="button" id="clearBtn">Clear</button>
+              </div>
+              <div class="small" style="margin-top: 10px">
+                Form ini menggunakan <b>mailto</b> (tanpa backend) supaya
+                simpel.
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="hr"></div>
+        © <span id="year"></span> A. Izzat Shafran Ashari
+      </footer>
+    </main>
+
+    <div class="toast" id="toast">Done!</div>
+
+    <script>
+      const PROFILE = {
+        email: "ifran@ashari.tech",
+        phone: "082271598281",
+        // untuk WhatsApp lebih aman pakai format internasional tanpa 0 (Indonesia +62)
+        phoneIntl: "6282271598281",
+        github: "https://github.com/AndiIzzat",
+        linkedin: "https://www.linkedin.com/in/andi-izzat-7329b630a/",
+        cvUrl: "#",
+      };
+
+      const $ = (q, r = document) => r.querySelector(q),
+        $$ = (q, r = document) => [...r.querySelectorAll(q)];
+      const toast = (t = "Done!") => {
+        const x = $("#toast");
+        x.textContent = t;
+        x.classList.add("show");
+        setTimeout(() => x.classList.remove("show"), 1200);
+      };
+      const jump = (id) =>
+        document
+          .querySelector(id)
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      $("#year").textContent = new Date().getFullYear();
+      $("#emailText").textContent = PROFILE.email;
+      $("#phoneText").textContent = PROFILE.phone;
+
+      $("#openGitHub").href = PROFILE.github;
+      $("#openLinkedIn").href = PROFILE.linkedin;
+      $("#openWhatsApp").href = `https://wa.me/${
+        PROFILE.phoneIntl
+      }?text=${encodeURIComponent(
+        "Halo Izzat, saya lihat portfoliomu. Boleh tanya-tanya?"
+      )}`;
+
+      $$("[data-jump]").forEach(
+        (b) => (b.onclick = () => jump(b.dataset.jump))
+      );
+
+      const copyText = async (text, msg) => {
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch {
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          document.body.append(ta);
+          ta.select();
+          document.execCommand("copy");
+          ta.remove();
+        }
+        toast(msg);
+      };
+
+      const copyEmail = () => copyText(PROFILE.email, "Email copied!");
+      $("#copyEmailBtn").onclick = copyEmail;
+      $("#copyEmailBtn2").onclick = copyEmail;
+      $("#copyPhoneBtn").onclick = () =>
+        copyText(PROFILE.phone, "Nomor WA copied!");
+
+      $("#themeBtn").onclick = () => {
+        document.body.dataset.theme =
+          document.body.dataset.theme === "dark" ? "light" : "dark";
+        toast(
+          document.body.dataset.theme === "dark" ? "Dark mode" : "Light mode"
+        );
+      };
+
+      $("#downloadCvBtn").onclick = () => {
+        if (!PROFILE.cvUrl || PROFILE.cvUrl === "#")
+          return toast("Tambahkan link CV dulu");
+        open(PROFILE.cvUrl, "_blank", "noopener,noreferrer");
+      };
+
+      addEventListener("load", () =>
+        $$(".bar>span").forEach(
+          (s) => (s.style.width = (s.dataset.level || 0) + "%")
+        )
+      );
+
+      $("#contactForm").onsubmit = (e) => {
+        e.preventDefault();
+        const n = $("#name").value.trim(),
+          em = $("#email").value.trim(),
+          m = $("#msg").value.trim();
+        location.href = `mailto:${PROFILE.email}?subject=${encodeURIComponent(
+          "Portfolio Contact — " + n
+        )}&body=${encodeURIComponent(
+          `Nama: ${n}\nEmail: ${em}\n\nPesan:\n${m}\n\n(Opsional) Kontak cepat via WhatsApp: https://wa.me/${PROFILE.phoneIntl}\n`
+        )}`;
+        toast("Opening email…");
+      };
+
+      $("#clearBtn").onclick = () => {
+        $("#name").value = "";
+        $("#email").value = "";
+        $("#msg").value = "";
+        toast("Cleared");
+      };
+    </script>
+  </body>
+</html>
