@@ -82,8 +82,12 @@
     <header class="hero" id="hero">
       <div class="wrap">
         <div class="hero__grid">
-          <div class="hero__content card card--glass reveal">
-            <div class="hero__badge">Available for work</div>
+          <!-- Left: Text Content -->
+          <div class="hero__left reveal">
+            <div class="hero__badge">
+              <span class="hero__badge-dot"></span>
+              Available for work
+            </div>
             <h1 class="hero__title">
               <span class="hero__title-line">Build clean.</span>
               <span class="hero__title-line">Ship <span class="text-gradient" id="typingText">fast</span>.</span>
@@ -117,30 +121,6 @@
                 Download CV
               </button>
             </div>
-            <p class="hero__note">
-              Saat ini terbuka untuk kolaborasi kecil, perbaikan UI, atau tugas front-end.
-            </p>
-          </div>
-
-          <div class="hero__sidebar card card--glass reveal reveal--delay-1">
-            <!-- Profile Photo -->
-            <div class="hero__photo">
-              <div class="hero__photo-wrapper">
-                <img src="assets/images/profile.jpg" alt="A. Izzat Shafran Ashari" class="hero__photo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="hero__photo-placeholder">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/>
-                  </svg>
-                </div>
-              </div>
-              <div class="hero__photo-info">
-                <span class="hero__photo-name">A. Izzat Shafran Ashari</span>
-                <span class="hero__photo-role">Junior Web Developer</span>
-              </div>
-            </div>
-            <div class="divider"></div>
-            <h3 class="hero__sidebar-title">Core Focus</h3>
             <div class="hero__tags">
               <span class="tag">Web UI</span>
               <span class="tag">UI/UX</span>
@@ -148,25 +128,47 @@
               <span class="tag">Design System</span>
               <span class="tag">Responsive</span>
             </div>
-            <div class="divider"></div>
-            <div class="hero__stats">
-              <div class="stat">
-                <span class="stat__number" data-count="3">0</span>
-                <span class="stat__label">Projects</span>
+          </div>
+
+          <!-- Right: Profile Card -->
+          <div class="hero__right reveal reveal--delay-1">
+            <div class="hero__profile-card card card--glass">
+              <div class="hero__photo">
+                <div class="hero__photo-wrapper">
+                  <img src="assets/images/profile.jpg" alt="A. Izzat Shafran Ashari" class="hero__photo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="hero__photo-placeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                      <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                  </div>
+                </div>
               </div>
-              <div class="stat">
-                <span class="stat__number" data-count="4">0</span>
-                <span class="stat__label">Skills</span>
+              <div class="hero__profile-info">
+                <h2 class="hero__profile-name">A. Izzat Shafran Ashari</h2>
+                <p class="hero__profile-role">Junior Web Developer</p>
+                <p class="hero__profile-company">@ Ashari Tech Indonesia</p>
               </div>
-              <div class="stat">
-                <span class="stat__number" data-count="100">0</span>
-                <span class="stat__label">% Effort</span>
+              <div class="divider"></div>
+              <div class="hero__stats">
+                <div class="stat">
+                  <span class="stat__number" data-count="3">0</span>
+                  <span class="stat__label">Projects</span>
+                </div>
+                <div class="stat">
+                  <span class="stat__number" data-count="4">0</span>
+                  <span class="stat__label">Skills</span>
+                </div>
+                <div class="stat">
+                  <span class="stat__number" data-count="100">0</span>
+                  <span class="stat__label">% Effort</span>
+                </div>
               </div>
+              <div class="divider"></div>
+              <p class="hero__philosophy">
+                Prinsip saya: <strong>jelas</strong>, <strong>cepat</strong>, dan <strong>konsisten</strong>.
+              </p>
             </div>
-            <div class="divider"></div>
-            <p class="hero__philosophy">
-              Prinsip saya sederhana: <strong>jelas</strong>, <strong>cepat</strong>, dan <strong>konsisten</strong>.
-            </p>
           </div>
         </div>
       </div>
