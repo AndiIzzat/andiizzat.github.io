@@ -1025,6 +1025,31 @@ img {
 /* --------------------------------------------
    Skills Section
    -------------------------------------------- */
+.skills__category {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-primary);
+  margin-bottom: var(--space-lg);
+  margin-top: var(--space-2xl);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.skills__category:first-of-type {
+  margin-top: 0;
+}
+
+.skills__category::before,
+.skills__category::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+}
+
 .skills__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
