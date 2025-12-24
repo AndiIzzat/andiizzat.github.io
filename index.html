@@ -2,623 +2,549 @@
 <html lang="id">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio A. Izzat Shafran Ashari - Junior Web Developer specializing in clean, responsive, and user-friendly web interfaces." />
+    <meta name="keywords" content="web developer, portfolio, front-end, UI/UX, Indonesia, Bandung" />
+    <meta name="author" content="A. Izzat Shafran Ashari" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="A. Izzat Shafran Ashari - Portfolio" />
+    <meta property="og:description" content="Junior Web Developer specializing in clean, responsive, and user-friendly web interfaces." />
+    <meta property="og:type" content="website" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0b0c10" />
+
     <title>A. Izzat Shafran Ashari — Portfolio</title>
-    <style>
-      :root {
-        --bg: #0b0c10;
-        --fg: rgba(255, 255, 255, 0.92);
-        --mut: rgba(255, 255, 255, 0.68);
-        --ln: rgba(255, 255, 255, 0.14);
-        --p: rgba(255, 255, 255, 0.06);
-        --p2: rgba(255, 255, 255, 0.1);
-        --r: 16px;
-      }
-      [data-theme="light"] {
-        --bg: #f7f7f8;
-        --fg: rgba(0, 0, 0, 0.88);
-        --mut: rgba(0, 0, 0, 0.62);
-        --ln: rgba(0, 0, 0, 0.14);
-        --p: rgba(0, 0, 0, 0.06);
-        --p2: rgba(0, 0, 0, 0.1);
-      }
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
-        background: var(--bg);
-        color: var(--fg);
-        line-height: 1.6;
-      }
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-      .wrap {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 16px;
-      }
-      .bg {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        opacity: 0.9;
-        filter: saturate(0);
-        background: radial-gradient(
-            800px 500px at 15% 20%,
-            rgba(255, 255, 255, 0.1),
-            transparent 60%
-          ),
-          radial-gradient(
-            900px 520px at 55% 85%,
-            rgba(255, 255, 255, 0.06),
-            transparent 60%
-          );
-      }
-      [data-theme="light"] .bg {
-        background: radial-gradient(
-            800px 500px at 15% 20%,
-            rgba(0, 0, 0, 0.08),
-            transparent 60%
-          ),
-          radial-gradient(
-            900px 520px at 55% 85%,
-            rgba(0, 0, 0, 0.05),
-            transparent 60%
-          );
-      }
-      nav {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--ln);
-        background: color-mix(in oklab, var(--bg) 60%, transparent);
-      }
-      .n {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px 0;
-      }
-      .brand {
-        font-weight: 900;
-      }
-      .m {
-        display: flex;
-        gap: 6px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      }
-      .btn,
-      .pill {
-        border: 1px solid var(--ln);
-        background: var(--p);
-        color: inherit;
-        border-radius: 999px;
-        padding: 9px 12px;
-        font-weight: 800;
-        cursor: pointer;
-      }
-      .btn {
-        border-radius: 12px;
-      }
-      .pill:hover,
-      .btn:hover {
-        background: var(--p2);
-      }
-      .card {
-        background: var(--p);
-        border: 1px solid var(--ln);
-        border-radius: var(--r);
-        padding: 16px;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 12px;
-      }
-      @media (max-width: 900px) {
-        .grid {
-          grid-template-columns: 1fr;
-        }
-      }
-      h1 {
-        margin: 0 0 8px;
-        font-size: clamp(26px, 4vw, 44px);
-        line-height: 1.1;
-      }
-      h2 {
-        margin: 0;
-        font-size: 14px;
-        letter-spacing: 0.2px;
-        text-transform: uppercase;
-        opacity: 0.9;
-      }
-      p {
-        margin: 0 0 12px;
-        color: var(--mut);
-      }
-      .sec {
-        padding: 14px 0;
-      }
-      .head {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-        align-items: end;
-      }
-      .hr {
-        height: 1px;
-        background: var(--ln);
-        margin: 10px 0 12px;
-      }
-      .row {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        align-items: center;
-      }
-      .skills {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-      }
-      @media (max-width: 900px) {
-        .skills {
-          grid-template-columns: 1fr;
-        }
-      }
-      .bar {
-        height: 10px;
-        border-radius: 999px;
-        border: 1px solid var(--ln);
-        overflow: hidden;
-        background: var(--p2);
-      }
-      .bar > span {
-        display: block;
-        height: 100%;
-        width: 0;
-        background: linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.9),
-          rgba(255, 255, 255, 0.6)
-        );
-        filter: saturate(0);
-      }
-      [data-theme="light"] .bar > span {
-        background: linear-gradient(
-          90deg,
-          rgba(0, 0, 0, 0.9),
-          rgba(0, 0, 0, 0.55)
-        );
-      }
-      .projects {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-      }
-      @media (max-width: 1000px) {
-        .projects {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-      @media (max-width: 650px) {
-        .projects {
-          grid-template-columns: 1fr;
-        }
-      }
-      .proj h3 {
-        margin: 0 0 6px;
-        font-size: 15px;
-      }
-      .proj p {
-        margin: 0;
-        color: var(--mut);
-        font-size: 13px;
-      }
-      label {
-        font-size: 12px;
-        font-weight: 900;
-        color: var(--mut);
-        text-transform: uppercase;
-      }
-      input,
-      textarea {
-        width: 100%;
-        padding: 11px 12px;
-        border-radius: 12px;
-        border: 1px solid var(--ln);
-        background: var(--p);
-        color: var(--fg);
-        outline: none;
-        font-weight: 700;
-      }
-      textarea {
-        min-height: 100px;
-        resize: vertical;
-      }
-      footer {
-        padding: 22px 0 32px;
-        color: var(--mut);
-        font-size: 12px;
-      }
-      .toast {
-        position: fixed;
-        left: 50%;
-        bottom: 18px;
-        transform: translateX(-50%);
-        background: color-mix(in oklab, var(--p2) 85%, transparent);
-        border: 1px solid var(--ln);
-        padding: 10px 12px;
-        border-radius: 999px;
-        opacity: 0;
-        pointer-events: none;
-        transition: 0.2s;
-        font-weight: 900;
-        font-size: 13px;
-      }
-      .toast.show {
-        opacity: 1;
-        transform: translateX(-50%) translateY(-4px);
-      }
-      .small {
-        color: var(--mut);
-        font-size: 13px;
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body data-theme="dark">
-    <div class="bg"></div>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+      <div class="loader__content">
+        <div class="loader__spinner"></div>
+        <div class="loader__text">Loading...</div>
+      </div>
+    </div>
 
-    <nav>
-      <div class="wrap n">
-        <div class="brand">
-          A. Izzat Shafran Ashari
-          <span class="small">• Intern @ Ashari Tech Indonesia</span>
-        </div>
-        <div class="m">
-          <button class="pill" data-jump="#about">About</button>
-          <button class="pill" data-jump="#skills">Skills</button>
-          <button class="pill" data-jump="#projects">Projects</button>
-          <button class="pill" data-jump="#contact">Contact</button>
-          <button class="pill" id="themeBtn" title="Toggle theme">
-            Change Mode
+    <!-- Animated Background -->
+    <div class="bg">
+      <div class="bg__gradient"></div>
+      <div class="bg__particles" id="particles"></div>
+    </div>
+
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+      <div class="wrap nav__inner">
+        <a href="#" class="nav__brand">
+          <span class="nav__logo">IZ</span>
+          <div class="nav__info">
+            <span class="nav__name">A. Izzat Shafran Ashari</span>
+            <span class="nav__role">Intern @ Ashari Tech Indonesia</span>
+          </div>
+        </a>
+        <div class="nav__menu">
+          <button class="nav__link" data-jump="#about">About</button>
+          <button class="nav__link" data-jump="#skills">Skills</button>
+          <button class="nav__link" data-jump="#projects">Projects</button>
+          <button class="nav__link" data-jump="#contact">Contact</button>
+          <button class="nav__theme" id="themeBtn" title="Toggle theme" aria-label="Toggle dark/light mode">
+            <svg class="icon icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            <svg class="icon icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+          <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
         </div>
       </div>
     </nav>
 
-    <header class="wrap sec">
-      <div class="grid">
-        <div class="card">
-          <h1>Build clean. Ship fast.</h1>
-          <p>
-            Saya <b>A. Izzat Shafran Ashari</b> — intern di
-            <b>Ashari Tech Indonesia</b>. Saya fokus membangun web yang
-            <b>rapi</b>, <b>responsif</b>, dan <b>nyaman dipakai</b>. Saya suka
-            mengubah ide jadi produk yang bisa langsung dicoba.
-          </p>
-          <div class="row">
-            <button class="btn" data-jump="#projects">Lihat Project</button>
-            <button class="btn" id="copyEmailBtn" type="button">
-              Copy Email
-            </button>
-            <button class="btn" id="downloadCvBtn" type="button">
-              Download CV
-            </button>
-          </div>
-          <div class="small" style="margin-top: 10px">
-            Saat ini terbuka untuk kolaborasi kecil, perbaikan UI, atau tugas
-            front-end.
-          </div>
-        </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="mobile-menu__link" data-jump="#about">About</button>
+      <button class="mobile-menu__link" data-jump="#skills">Skills</button>
+      <button class="mobile-menu__link" data-jump="#projects">Projects</button>
+      <button class="mobile-menu__link" data-jump="#contact">Contact</button>
+    </div>
 
-        <div class="card">
-          <p style="margin: 0 0 10px"><b>Core focus</b></p>
-          <div class="row">
-            <span class="pill" style="cursor: default">Web UI</span>
-            <span class="pill" style="cursor: default">UI/UX</span>
-            <span class="pill" style="cursor: default">Front-end</span>
-            <span class="pill" style="cursor: default">Design System</span>
-            <span class="pill" style="cursor: default">Responsive</span>
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+      <div class="wrap">
+        <div class="hero__grid">
+          <div class="hero__content card card--glass reveal">
+            <div class="hero__badge">Available for work</div>
+            <h1 class="hero__title">
+              <span class="hero__title-line">Build clean.</span>
+              <span class="hero__title-line">Ship <span class="text-gradient" id="typingText">fast</span>.</span>
+            </h1>
+            <p class="hero__desc">
+              Saya <strong>A. Izzat Shafran Ashari</strong> — intern di
+              <strong>Ashari Tech Indonesia</strong>. Saya fokus membangun web yang
+              <strong>rapi</strong>, <strong>responsif</strong>, dan <strong>nyaman dipakai</strong>.
+            </p>
+            <div class="hero__actions">
+              <button class="btn btn--primary" data-jump="#projects">
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+                Lihat Project
+              </button>
+              <button class="btn btn--secondary" id="copyEmailBtn">
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+                Copy Email
+              </button>
+              <button class="btn btn--secondary" id="downloadCvBtn">
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7,10 12,15 17,10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download CV
+              </button>
+            </div>
+            <p class="hero__note">
+              Saat ini terbuka untuk kolaborasi kecil, perbaikan UI, atau tugas front-end.
+            </p>
           </div>
-          <div class="hr"></div>
-          <div class="small">
-            Prinsip saya sederhana: <b>jelas</b>, <b>cepat</b>, dan
-            <b>konsisten</b>.
+
+          <div class="hero__sidebar card card--glass reveal reveal--delay-1">
+            <h3 class="hero__sidebar-title">Core Focus</h3>
+            <div class="hero__tags">
+              <span class="tag">Web UI</span>
+              <span class="tag">UI/UX</span>
+              <span class="tag">Front-end</span>
+              <span class="tag">Design System</span>
+              <span class="tag">Responsive</span>
+            </div>
+            <div class="divider"></div>
+            <div class="hero__stats">
+              <div class="stat">
+                <span class="stat__number" data-count="3">0</span>
+                <span class="stat__label">Projects</span>
+              </div>
+              <div class="stat">
+                <span class="stat__number" data-count="4">0</span>
+                <span class="stat__label">Skills</span>
+              </div>
+              <div class="stat">
+                <span class="stat__number" data-count="100">0</span>
+                <span class="stat__label">% Effort</span>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <p class="hero__philosophy">
+              Prinsip saya sederhana: <strong>jelas</strong>, <strong>cepat</strong>, dan <strong>konsisten</strong>.
+            </p>
           </div>
         </div>
       </div>
     </header>
 
-    <main class="wrap">
-      <section class="sec" id="about">
-        <div class="head"><h2>About</h2></div>
-        <div class="hr"></div>
-        <div class="card">
-          Saya menikmati proses membangun antarmuka yang “ringan tapi niat”.
-          Mulai dari layout, komponen, sampai detail kecil seperti spacing,
-          state tombol, dan aksesibilitas dasar. Target saya: hasil yang
-          terlihat profesional dan mudah dipelihara.
-        </div>
-      </section>
-
-      <section class="sec" id="skills">
-        <div class="head"><h2>Skills</h2></div>
-        <div class="hr"></div>
-        <div class="skills">
-          <div class="card">
-            <div class="row" style="justify-content: space-between">
-              <b>HTML/CSS</b><span class="small">Advanced</span>
-            </div>
-            <div class="bar"><span data-level="86"></span></div>
+    <main class="main">
+      <!-- About Section -->
+      <section class="section" id="about">
+        <div class="wrap">
+          <div class="section__header reveal">
+            <span class="section__number">01</span>
+            <h2 class="section__title">About</h2>
+            <div class="section__line"></div>
           </div>
-          <div class="card">
-            <div class="row" style="justify-content: space-between">
-              <b>JavaScript</b><span class="small">Intermediate</span>
+          <div class="about__content card card--glass reveal reveal--delay-1">
+            <div class="about__text">
+              <p>
+                Saya menikmati proses membangun antarmuka yang <strong>"ringan tapi niat"</strong>.
+                Mulai dari layout, komponen, sampai detail kecil seperti spacing,
+                state tombol, dan aksesibilitas dasar.
+              </p>
+              <p>
+                Target saya: hasil yang terlihat <strong>profesional</strong> dan <strong>mudah dipelihara</strong>.
+              </p>
             </div>
-            <div class="bar"><span data-level="74"></span></div>
-          </div>
-          <div class="card">
-            <div class="row" style="justify-content: space-between">
-              <b>UI/UX</b><span class="small">Intermediate</span>
-            </div>
-            <div class="bar"><span data-level="70"></span></div>
-          </div>
-          <div class="card">
-            <div class="row" style="justify-content: space-between">
-              <b>Git/GitHub</b><span class="small">Intermediate</span>
-            </div>
-            <div class="bar"><span data-level="72"></span></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="sec" id="projects">
-        <div class="head"><h2>Projects</h2></div>
-        <div class="hr"></div>
-        <div class="projects">
-          <article class="card proj">
-            <h3>Monochrome Landing</h3>
-            <p>Landing page modern, responsive, dan fokus pada keterbacaan.</p>
-            <div class="row" style="margin-top: 10px">
-              <a class="btn" href="#" onclick="return false;">Demo</a>
-              <a class="btn" href="#" onclick="return false;">Repo</a>
-            </div>
-          </article>
-          <article class="card proj">
-            <h3>Mini Dashboard</h3>
-            <p>
-              Dashboard ringkas untuk menampilkan data dengan UX yang jelas.
-            </p>
-            <div class="row" style="margin-top: 10px">
-              <a class="btn" href="#" onclick="return false;">Demo</a>
-              <a class="btn" href="#" onclick="return false;">Repo</a>
-            </div>
-          </article>
-          <article class="card proj">
-            <h3>Automation Helper</h3>
-            <p>
-              Tool kecil untuk mempercepat pekerjaan berulang
-              (format/cek/generate).
-            </p>
-            <div class="row" style="margin-top: 10px">
-              <a class="btn" href="#" onclick="return false;">Demo</a>
-              <a class="btn" href="#" onclick="return false;">Repo</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="sec" id="contact">
-        <div class="head"><h2>Contact</h2></div>
-        <div class="hr"></div>
-
-        <div class="grid">
-          <div class="card">
-            <div class="row" style="justify-content: space-between">
-              <div>
-                <b>Email</b>
-                <div id="emailText" class="small">ifran@ashari.tech</div>
-                <div class="hr"></div>
-                <b>WhatsApp</b>
-                <div id="phoneText" class="small">082271598281</div>
+            <div class="about__highlights">
+              <div class="highlight">
+                <svg class="highlight__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20,6 9,17 4,12"/>
+                </svg>
+                <span>Clean Code</span>
               </div>
-              <div class="row" style="justify-content: flex-end">
-                <button class="btn" id="copyEmailBtn2" type="button">
-                  Copy Email
-                </button>
-                <button class="btn" id="copyPhoneBtn" type="button">
-                  Copy WA
-                </button>
+              <div class="highlight">
+                <svg class="highlight__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20,6 9,17 4,12"/>
+                </svg>
+                <span>Responsive Design</span>
+              </div>
+              <div class="highlight">
+                <svg class="highlight__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20,6 9,17 4,12"/>
+                </svg>
+                <span>User-Focused</span>
               </div>
             </div>
-
-            <div class="hr"></div>
-            <div class="row">
-              <a
-                class="btn"
-                id="openLinkedIn"
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-                >LinkedIn</a
-              >
-              <a
-                class="btn"
-                id="openGitHub"
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-                >GitHub</a
-              >
-              <a
-                class="btn"
-                id="openWhatsApp"
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-                >WhatsApp</a
-              >
-            </div>
-
-            <div class="small" style="margin-top: 10px">
-              Biasanya saya balas dalam 1×24 jam (kalau tidak sedang
-              meeting/kelas).
-            </div>
           </div>
+        </div>
+      </section>
 
-          <div class="card">
-            <form id="contactForm">
-              <div class="row">
-                <div style="flex: 1; min-width: 200px">
-                  <label>Nama</label
-                  ><input id="name" required placeholder="Nama kamu" />
+      <!-- Skills Section -->
+      <section class="section" id="skills">
+        <div class="wrap">
+          <div class="section__header reveal">
+            <span class="section__number">02</span>
+            <h2 class="section__title">Skills</h2>
+            <div class="section__line"></div>
+          </div>
+          <div class="skills__grid">
+            <div class="skill-card card card--glass reveal">
+              <div class="skill-card__header">
+                <div class="skill-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
                 </div>
-                <div style="flex: 1; min-width: 200px">
-                  <label>Email</label
-                  ><input
-                    id="email"
-                    required
-                    type="email"
-                    placeholder="email@domain.com"
-                  />
+                <div class="skill-card__info">
+                  <h3 class="skill-card__name">HTML/CSS</h3>
+                  <span class="skill-card__level">Advanced</span>
                 </div>
+                <span class="skill-card__percent">86%</span>
               </div>
-              <div style="margin-top: 10px">
-                <label>Pesan</label
-                ><textarea
-                  id="msg"
-                  placeholder="Tulis pesan singkat (contoh: butuh landing page, revisi UI, dsb)…"
-                ></textarea>
+              <div class="skill-bar">
+                <div class="skill-bar__fill" data-level="86"></div>
               </div>
-              <div class="row" style="margin-top: 10px">
-                <button class="btn" type="submit">Kirim via Email →</button>
-                <button class="btn" type="button" id="clearBtn">Clear</button>
+            </div>
+
+            <div class="skill-card card card--glass reveal reveal--delay-1">
+              <div class="skill-card__header">
+                <div class="skill-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                  </svg>
+                </div>
+                <div class="skill-card__info">
+                  <h3 class="skill-card__name">JavaScript</h3>
+                  <span class="skill-card__level">Intermediate</span>
+                </div>
+                <span class="skill-card__percent">74%</span>
               </div>
-              <div class="small" style="margin-top: 10px">
-                Form ini menggunakan <b>mailto</b> (tanpa backend) supaya
-                simpel.
+              <div class="skill-bar">
+                <div class="skill-bar__fill" data-level="74"></div>
               </div>
-            </form>
+            </div>
+
+            <div class="skill-card card card--glass reveal reveal--delay-2">
+              <div class="skill-card__header">
+                <div class="skill-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                    <line x1="9" y1="9" x2="9.01" y2="9"/>
+                    <line x1="15" y1="9" x2="15.01" y2="9"/>
+                  </svg>
+                </div>
+                <div class="skill-card__info">
+                  <h3 class="skill-card__name">UI/UX</h3>
+                  <span class="skill-card__level">Intermediate</span>
+                </div>
+                <span class="skill-card__percent">70%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar__fill" data-level="70"></div>
+              </div>
+            </div>
+
+            <div class="skill-card card card--glass reveal reveal--delay-3">
+              <div class="skill-card__header">
+                <div class="skill-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="4"/>
+                    <line x1="1.05" y1="12" x2="7" y2="12"/>
+                    <line x1="17.01" y1="12" x2="22.96" y2="12"/>
+                  </svg>
+                </div>
+                <div class="skill-card__info">
+                  <h3 class="skill-card__name">Git/GitHub</h3>
+                  <span class="skill-card__level">Intermediate</span>
+                </div>
+                <span class="skill-card__percent">72%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar__fill" data-level="72"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <footer>
-        <div class="hr"></div>
-        © <span id="year"></span> A. Izzat Shafran Ashari
-      </footer>
+      <!-- Projects Section -->
+      <section class="section" id="projects">
+        <div class="wrap">
+          <div class="section__header reveal">
+            <span class="section__number">03</span>
+            <h2 class="section__title">Projects</h2>
+            <div class="section__line"></div>
+          </div>
+          <div class="projects__grid">
+            <article class="project-card card card--glass reveal">
+              <div class="project-card__image">
+                <div class="project-card__placeholder">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21,15 16,10 5,21"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="project-card__content">
+                <div class="project-card__tags">
+                  <span class="project-card__tag">HTML</span>
+                  <span class="project-card__tag">CSS</span>
+                </div>
+                <h3 class="project-card__title">Monochrome Landing</h3>
+                <p class="project-card__desc">Landing page modern, responsive, dan fokus pada keterbacaan.</p>
+                <div class="project-card__actions">
+                  <a class="btn btn--small" href="#" onclick="return false;">
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"/>
+                      <polygon points="10,8 16,12 10,16"/>
+                    </svg>
+                    Demo
+                  </a>
+                  <a class="btn btn--small btn--outline" href="#" onclick="return false;">
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                    </svg>
+                    Repo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card card card--glass reveal reveal--delay-1">
+              <div class="project-card__image">
+                <div class="project-card__placeholder">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="7" height="7"/>
+                    <rect x="14" y="3" width="7" height="7"/>
+                    <rect x="14" y="14" width="7" height="7"/>
+                    <rect x="3" y="14" width="7" height="7"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="project-card__content">
+                <div class="project-card__tags">
+                  <span class="project-card__tag">HTML</span>
+                  <span class="project-card__tag">CSS</span>
+                  <span class="project-card__tag">JS</span>
+                </div>
+                <h3 class="project-card__title">Mini Dashboard</h3>
+                <p class="project-card__desc">Dashboard ringkas untuk menampilkan data dengan UX yang jelas.</p>
+                <div class="project-card__actions">
+                  <a class="btn btn--small" href="#" onclick="return false;">
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"/>
+                      <polygon points="10,8 16,12 10,16"/>
+                    </svg>
+                    Demo
+                  </a>
+                  <a class="btn btn--small btn--outline" href="#" onclick="return false;">
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                    </svg>
+                    Repo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card card card--glass reveal reveal--delay-2">
+              <div class="project-card__image">
+                <div class="project-card__placeholder">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="project-card__content">
+                <div class="project-card__tags">
+                  <span class="project-card__tag">JS</span>
+                  <span class="project-card__tag">Automation</span>
+                </div>
+                <h3 class="project-card__title">Automation Helper</h3>
+                <p class="project-card__desc">Tool kecil untuk mempercepat pekerjaan berulang (format/cek/generate).</p>
+                <div class="project-card__actions">
+                  <a class="btn btn--small" href="#" onclick="return false;">
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"/>
+                      <polygon points="10,8 16,12 10,16"/>
+                    </svg>
+                    Demo
+                  </a>
+                  <a class="btn btn--small btn--outline" href="#" onclick="return false;">
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                    </svg>
+                    Repo
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="section" id="contact">
+        <div class="wrap">
+          <div class="section__header reveal">
+            <span class="section__number">04</span>
+            <h2 class="section__title">Contact</h2>
+            <div class="section__line"></div>
+          </div>
+          <div class="contact__grid">
+            <div class="contact__info card card--glass reveal">
+              <h3 class="contact__heading">Let's Connect</h3>
+              <p class="contact__text">
+                Biasanya saya balas dalam 1x24 jam (kalau tidak sedang meeting/kelas).
+              </p>
+
+              <div class="contact__items">
+                <div class="contact__item">
+                  <div class="contact__item-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                      <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                  </div>
+                  <div class="contact__item-content">
+                    <span class="contact__item-label">Email</span>
+                    <span class="contact__item-value" id="emailText">ifran@ashari.tech</span>
+                  </div>
+                  <button class="btn btn--icon" id="copyEmailBtn2" title="Copy email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="9" y="9" width="13" height="13" rx="2"/>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="contact__item">
+                  <div class="contact__item-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                  </div>
+                  <div class="contact__item-content">
+                    <span class="contact__item-label">WhatsApp</span>
+                    <span class="contact__item-value" id="phoneText">082271598281</span>
+                  </div>
+                  <button class="btn btn--icon" id="copyPhoneBtn" title="Copy phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="9" y="9" width="13" height="13" rx="2"/>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="contact__social">
+                <a class="social-link" id="openLinkedIn" href="#" target="_blank" rel="noreferrer" title="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </a>
+                <a class="social-link" id="openGitHub" href="#" target="_blank" rel="noreferrer" title="GitHub">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                  </svg>
+                </a>
+                <a class="social-link" id="openWhatsApp" href="#" target="_blank" rel="noreferrer" title="WhatsApp">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact__form-wrapper card card--glass reveal reveal--delay-1">
+              <form class="contact__form" id="contactForm">
+                <div class="form__row">
+                  <div class="form__group">
+                    <label class="form__label" for="name">Nama</label>
+                    <input class="form__input" id="name" type="text" required placeholder="Nama kamu" autocomplete="name" />
+                  </div>
+                  <div class="form__group">
+                    <label class="form__label" for="email">Email</label>
+                    <input class="form__input" id="email" type="email" required placeholder="email@domain.com" autocomplete="email" />
+                  </div>
+                </div>
+                <div class="form__group">
+                  <label class="form__label" for="msg">Pesan</label>
+                  <textarea class="form__textarea" id="msg" placeholder="Tulis pesan singkat (contoh: butuh landing page, revisi UI, dsb)..."></textarea>
+                </div>
+                <div class="form__actions">
+                  <button class="btn btn--primary" type="submit">
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="22" y1="2" x2="11" y2="13"/>
+                      <polygon points="22,2 15,22 11,13 2,9"/>
+                    </svg>
+                    Kirim via Email
+                  </button>
+                  <button class="btn btn--secondary" type="button" id="clearBtn">Clear</button>
+                </div>
+                <p class="form__note">
+                  Form ini menggunakan <strong>mailto</strong> (tanpa backend) supaya simpel.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <div class="toast" id="toast">Done!</div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__content">
+          <p class="footer__copyright">
+            &copy; <span id="year"></span> A. Izzat Shafran Ashari. Built with passion.
+          </p>
+          <button class="footer__back-to-top" id="backToTop" title="Back to top">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="18,15 12,9 6,15"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </footer>
 
-    <script>
-      const PROFILE = {
-        email: "ifran@ashari.tech",
-        phone: "082271598281",
-        // untuk WhatsApp lebih aman pakai format internasional tanpa 0 (Indonesia +62)
-        phoneIntl: "6282271598281",
-        github: "https://github.com/AndiIzzat",
-        linkedin: "https://www.linkedin.com/in/andi-izzat-7329b630a/",
-        cvUrl: "#",
-      };
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+      <svg class="toast__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="20,6 9,17 4,12"/>
+      </svg>
+      <span class="toast__text">Done!</span>
+    </div>
 
-      const $ = (q, r = document) => r.querySelector(q),
-        $$ = (q, r = document) => [...r.querySelectorAll(q)];
-      const toast = (t = "Done!") => {
-        const x = $("#toast");
-        x.textContent = t;
-        x.classList.add("show");
-        setTimeout(() => x.classList.remove("show"), 1200);
-      };
-      const jump = (id) =>
-        document
-          .querySelector(id)
-          ?.scrollIntoView({ behavior: "smooth", block: "start" });
-
-      $("#year").textContent = new Date().getFullYear();
-      $("#emailText").textContent = PROFILE.email;
-      $("#phoneText").textContent = PROFILE.phone;
-
-      $("#openGitHub").href = PROFILE.github;
-      $("#openLinkedIn").href = PROFILE.linkedin;
-      $("#openWhatsApp").href = `https://wa.me/${
-        PROFILE.phoneIntl
-      }?text=${encodeURIComponent(
-        "Halo Izzat, saya lihat portfoliomu. Boleh tanya-tanya?"
-      )}`;
-
-      $$("[data-jump]").forEach(
-        (b) => (b.onclick = () => jump(b.dataset.jump))
-      );
-
-      const copyText = async (text, msg) => {
-        try {
-          await navigator.clipboard.writeText(text);
-        } catch {
-          const ta = document.createElement("textarea");
-          ta.value = text;
-          document.body.append(ta);
-          ta.select();
-          document.execCommand("copy");
-          ta.remove();
-        }
-        toast(msg);
-      };
-
-      const copyEmail = () => copyText(PROFILE.email, "Email copied!");
-      $("#copyEmailBtn").onclick = copyEmail;
-      $("#copyEmailBtn2").onclick = copyEmail;
-      $("#copyPhoneBtn").onclick = () =>
-        copyText(PROFILE.phone, "Nomor WA copied!");
-
-      $("#themeBtn").onclick = () => {
-        document.body.dataset.theme =
-          document.body.dataset.theme === "dark" ? "light" : "dark";
-        toast(
-          document.body.dataset.theme === "dark" ? "Dark mode" : "Light mode"
-        );
-      };
-
-      $("#downloadCvBtn").onclick = () => {
-        if (!PROFILE.cvUrl || PROFILE.cvUrl === "#")
-          return toast("Tambahkan link CV dulu");
-        open(PROFILE.cvUrl, "_blank", "noopener,noreferrer");
-      };
-
-      addEventListener("load", () =>
-        $$(".bar>span").forEach(
-          (s) => (s.style.width = (s.dataset.level || 0) + "%")
-        )
-      );
-
-      $("#contactForm").onsubmit = (e) => {
-        e.preventDefault();
-        const n = $("#name").value.trim(),
-          em = $("#email").value.trim(),
-          m = $("#msg").value.trim();
-        location.href = `mailto:${PROFILE.email}?subject=${encodeURIComponent(
-          "Portfolio Contact — " + n
-        )}&body=${encodeURIComponent(
-          `Nama: ${n}\nEmail: ${em}\n\nPesan:\n${m}\n\n(Opsional) Kontak cepat via WhatsApp: https://wa.me/${PROFILE.phoneIntl}\n`
-        )}`;
-        toast("Opening email…");
-      };
-
-      $("#clearBtn").onclick = () => {
-        $("#name").value = "";
-        $("#email").value = "";
-        $("#msg").value = "";
-        toast("Cleared");
-      };
-    </script>
+    <script src="js/main.js"></script>
   </body>
 </html>
