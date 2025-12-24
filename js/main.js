@@ -17,7 +17,7 @@ const CONFIG = {
     cvUrl: '#',
   },
   typing: {
-    words: ['inspire', 'engage', 'delight', 'perform'],
+    words: ['captivate', 'inspire', 'stand out', 'connect'],
     typeSpeed: 100,
     deleteSpeed: 50,
     pauseTime: 2000,
