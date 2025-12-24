@@ -656,6 +656,7 @@ img {
 .hero__right {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 /* Badge */
@@ -727,8 +728,8 @@ img {
 /* Profile Card */
 .hero__profile-card {
   width: 100%;
-  max-width: 340px;
-  padding: var(--space-xl);
+  max-width: 380px;
+  padding: var(--space-2xl);
   text-align: center;
 }
 
@@ -741,8 +742,8 @@ img {
 
 .hero__photo-wrapper {
   position: relative;
-  width: 140px;
-  height: 140px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   overflow: hidden;
   background: var(--glass-bg);
@@ -808,10 +809,10 @@ img {
 }
 
 .hero__profile-name {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--text-primary);
-  margin: 0 0 4px;
+  margin: 0 0 6px;
 }
 
 .hero__profile-role {
